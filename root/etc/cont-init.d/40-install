@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+
+[ "$REPO_GIT" = "" ] && REPO_GIT="https://github.com/ciromattia/kcc"
+[ "$KCC_VERSION" = "" ] && KCC_VERSION="master"
+
+  echo '------------------------'
+  echo '| Installing kcc       |'
+  echo '------------------------'
+
+
+pip install "git+${REPO_GIT}@${KCC_VERSION}"
