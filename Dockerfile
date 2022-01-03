@@ -19,6 +19,8 @@ RUN \
  apt-get install -y \
         python3 \
         python3-distutils \
+        python3-dev \
+        gcc \
     	 unzip \
         unrar \
         p7zip-full \
