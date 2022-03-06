@@ -37,8 +37,8 @@ services:
       - GUAC_USER=abc #optional
       - GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 #optional
       - UMASK_SET=022 #optional
-      - KCC_VERSION=master #optional
-      - REPO_GIT=https://github.com/ciromattia/kcc #optional
+      - KCC_VERSION=mambo #optional
+      - REPO_GIT=https://github.com/StudioEtrange/kcc #optional
     volumes:
       - /path/to/data:/config
     ports:
@@ -58,8 +58,8 @@ docker run -d \
   -e GUAC_USER=abc `#optional` \
   -e GUAC_PASS=900150983cd24fb0d6963f7d28e17f72 `#optional` \
   -e UMASK_SET=022 `#optional` \
-  -e KCC_VERSION=master `#optional` \
-  -e REPO_GIT=https://github.com/ciromattia/kcc `#optional` \
+  -e KCC_VERSION=mambo `#optional` \
+  -e REPO_GIT=https://github.com/StudioEtrange/kcc `#optional` \
   -p 8080:8080 \
   -p 3389:3389 \
   -v /path/to/data:/config \
@@ -73,16 +73,16 @@ docker run -d \
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 8080` | Guacamole web Desktop gui. |
-| `-p 3389` | RDP port. |
+| `-p 8080` | Allows HTTP access to a web desktop gui (with Guacamole). |
+| `-p 3389` | Allows RDP access to the desktop. |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
 | `-e GUAC_USER=abc` | Username for the desktop gui. |
 | `-e GUAC_PASS=900150983cd24fb0d6963f7d28e17f72` | Password's md5 hash for the calibre desktop gui. |
 | `-e UMASK_SET=022` | for umask setting, default if left unset is 022. |
-| `-e REPO_GIT=https://github.com/ciromattia/kcc` | git repository from where to install kcc, default is https://github.com/ciromattia/kcc. |
-| `-e KCC_VERSION=master` | tag or commit in git repository, default is master. |
+| `-e REPO_GIT=https://github.com/StudioEtrange/kcc` | git repository from where to install kcc, default is https://github.com/ciromattia/kcc. |
+| `-e KCC_VERSION=mambo` | tag or commit in git repository, default is master. |
 | `-v /config` | Where kcc should store some config. |
 
 
@@ -136,4 +136,12 @@ docker build \
   --pull \
   -t studioetrange/kcc:latest .
 ```
+
+
+### using makefile
+
+```
+make VERSION=latest
+```
+
 
