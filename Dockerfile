@@ -33,7 +33,7 @@ RUN \
         libxcb-xinerama0 \
         libqt5x11extras5 && \
  echo "**** install pip ****" && \
- curl -fkSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+ curl -fkSL https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.py && \
  python3 get-pip.py && \
  ln -s \
         /usr/bin/python3 \
